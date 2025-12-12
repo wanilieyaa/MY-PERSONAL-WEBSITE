@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Friends - Wani</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+body { 
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #000;
+  overflow-x: hidden;
+  perspective: 1500px;
+}
+
+/* Background shimmer */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right:0; bottom:0;
+  background: url('onepiece-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+  opacity: 0.85;
+  animation: shimmer 25s infinite linear;
+}
+@keyframes shimmer {
+  0% { transform: translateX(0px) translateY(0px); }
+  50% { transform: translateX(25px) translateY(15px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+/* Header */
+header {
+  background-color: rgba(169,169,169,0.9);
+  text-align: center;
+  padding: 25px;
+  backdrop-filter: blur(3px);
+}
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.8em;
+  margin: 0;
+  color: black;
+  letter-spacing: 2px;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  background-color: #191970;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav ul li a:hover, nav ul li a.active {
+  background-color: #3b3b98;
+  border-radius: 5px;
+}
+
+/* Main */
+main {
+  flex: 1;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title */
+main h2 {
+  font-size: 1.8em;
+  color: #00008B;
+  margin-bottom: 20px;
+}
+
+/* Friends grid */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+/* Friend card */
+.friend-card {
+  border-radius: 20px;
+  width: 220px;
+  overflow: hidden;
+  border: 3px solid white;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transform-style: preserve-3d;
+  transition: transform 0.5s, box-shadow 0.5s;
+  opacity: 0;
+  position: relative;
+}
+.friend-card:hover {
+  transform: rotateX(5deg) rotateY(-5deg) scale(1.05);
+  box-shadow: 0 25px 50px rgba(75,0,130,0.45);
+  border-image: linear-gradient(45deg, #b084f5, #ffffff, #caa7ff) 1;
+}
+.friend-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 4px solid white;
+}
+.friend-card .quote {
+  padding: 15px;
+  background: rgba(255,255,255,0.85);
+  color: black;
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transition: opacity 0.5s;
+  opacity: 0.7;
+}
+.friend-card:hover .quote { opacity: 1; }
+
+.friend-card .badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffde59;
+  color: #000;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+.friend-card .subtitle {
+  font-size: 0.8em;
+  color: #555;
+  margin-top: 5px;
+}
+.friend-card .fun-fact {
+  font-size: 0.75em;
+  color: #777;
+  margin-top: 3px;
+}
+.friend-card .emoji {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.2em;
+}
+
+/* Fade-in animation */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+
+<header><h1>My Friends 💕</h1></header>
+
+<nav><ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="aboutme.html">About Me</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="experience.html">Experience</a></li>
+<li><a href="friends.html" class="active">Friends</a></li>
+<li><a href="favourites.html">Favourites</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+</ul></nav>
+
+<main>
+<h2>🧑‍🤝‍🧑🧑‍🤝‍🧑My Amazing Friends 👭👩‍❤️‍👩</h2>
+<p>I’m grateful to have friends who support, make me laugh, and share unforgettable memories. They brighten my life every day ✨</p>
+
+<div class="friends-grid">
+
+  <!-- Card 1 – Lavender Gradient -->
+  <div class="friend-card" 
+    style="animation: fadeUp 1s forwards; animation-delay:0.2s;
+    background: linear-gradient(135deg, rgba(218,189,255,0.7), rgba(255,255,255,0.7));">
+    <span class="badge">Bestie</span>
+    <span class="emoji">💜</span>
+    <img src="friend1.jpg" alt="Friend 1">
+    <div class="quote">“Laughter is better when shared.”</div>
+    <div class="subtitle">Since School</div>
+    <div class="fun-fact">Loves baking 🍰</div>
+  </div>
+
+  <!-- Card 2 – Pink Blush Gradient -->
+  <div class="friend-card" 
+    style="animation: fadeUp 1s forwards; animation-delay:0.4s;
+    background: linear-gradient(135deg, rgba(255,207,220,0.7), rgba(255,255,255,0.7));">
+    <span class="badge">Partner-in-crime</span>
+    <span class="emoji">🤣</span>
+    <img src="friend2.jpg" alt="Friend 2">
+    <div class="quote">“A true friend is a treasure.”</div>
+    <div class="subtitle">College Buddy</div>
+    <div class="fun-fact">Always joking 😎</div>
+  </div>
+
+  <!-- Card 3 – Baby Blue Gradient -->
+  <div class="friend-card" 
+    style="animation: fadeUp 1s forwards; animation-delay:0.6s;
+    background: linear-gradient(135deg, rgba(180,210,255,0.7), rgba(255,255,255,0.7));">
+    <span class="badge">Confidant</span>
+    <span class="emoji">✨</span>
+    <img src="friend3.jpg" alt="Friend 3">
+    <div class="quote">“Friends are family we choose.”</div>
+    <div class="subtitle">Gossip Partner</div>
+    <div class="fun-fact">strongest people🏋️‍♀️</div>
+  </div>
+
+  <!-- Card 4 – Soft Mint Gradient -->
+  <div class="friend-card" 
+    style="animation: fadeUp 1s forwards; animation-delay:0.8s;
+    background: linear-gradient(135deg, rgba(190,255,230,0.7), rgba(255,255,255,0.7));">
+    <span class="badge">Supporter</span>
+    <span class="emoji">🎶</span>
+    <img src="friend4.jpg" alt="Friend 4">
+    <div class="quote">“Sharing smiles, making memories.”</div>
+    <div class="subtitle">Music Buddy</div>
+    <div class="fun-fact">Plays guitar 🎸</div>
+  </div>
+
+</div>
+</main>
+
+<footer>&copy; 2025 | Educational Purpose Only | Syazwani Alieya Bt Zakaria</footer>
+
+<script>
+// Floating scroll effect
+const cards = document.querySelectorAll('.friend-card');
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  cards.forEach((card, i) => {
+    card.style.transform = `translateY(${scrollY*0.03*(i+1)}px) rotateX(5deg) rotateY(-5deg)`;
+  });
+});
+
+// Random pop effect
+setInterval(() => {
+  const random = Math.floor(Math.random() * cards.length);
+  cards[random].style.transform += " scale(1.08)";
+  setTimeout(() => {
+    cards[random].style.transform = cards[random].style.transform.replace(" scale(1.08)", "");
+  }, 600);
+}, 2500);
+</script>
+
+</body>
+</html>

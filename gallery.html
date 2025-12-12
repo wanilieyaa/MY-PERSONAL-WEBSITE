@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gallery - Wani</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+/* ====== ASAL (TIDAK DIUSIK) ====== */
+body {
+  background: url('onepiece-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgba(169,169,169,0.85);
+  color: black;
+  padding: 25px;
+  text-align: center;
+  backdrop-filter: blur(3px);
+}
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #191970;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+nav ul li a {
+  display: block;
+  color: white;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: #3b3b98;
+  border-radius: 5px;
+}
+
+main {
+  flex: 1;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cloud-title {
+  display: inline-block;
+  background: linear-gradient(to bottom right, #d8b7ffcc, #f4d9ffcc);
+  padding: 15px 35px;
+  border-radius: 50px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  color: #3d1f72;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
+  margin-bottom: 40px;
+  border: 2px dashed #b57edc;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+footer {
+  background: rgba(169,169,169,0.85);
+  color: #000;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9em;
+  backdrop-filter: blur(3px);
+}
+
+/* ====== IDEA 6 (BUBBLE BUTTONS) ====== */
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.category-buttons button {
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255,255,255,0.35);
+  font-weight: 600;
+  color: #4b2c72;
+  border: 2px dashed #b57edc;
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+.category-buttons button:hover {
+  background: rgba(255,255,255,0.55);
+  transform: translateY(-3px);
+}
+
+/* ====== IDEA 3 (ACCORDION + GLASS EFFECT) ====== */
+.accordion {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  border: 2px dashed #b57edc;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+.accordion-header {
+  padding: 15px;
+  font-size: 1.3em;
+  background: rgba(235, 210, 255, 0.35);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  color: #3d1f72;
+  cursor: pointer;
+  font-weight: 600;
+  text-align: left;
+}
+
+.accordion-body {
+  display: none;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+/* gallery inside accordion */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(6px);
+  transition: 0.3s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+
+<header><h1>MY GALLERY 📷</h1></header>
+
+<nav>
+<ul>
+<li><a href="home.html">Home</a></li>
+<li><a href="aboutme.html">About Me</a></li>
+<li><a href="education.html">Education</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="experience.html">Experience</a></li>
+<li><a href="friends.html">Friends</a></li>
+<li><a href="favourites.html">Favourites</a></li>
+<li><a href="gallery.html" class="active">Gallery</a></li>
+</ul>
+</nav>
+
+<main>
+
+<div class="cloud-title">My Beautiful Memories 💞</div>
+
+<!-- 🌸 Bubble buttons -->
+<div class="category-buttons">
+  <button onclick="openAccordion(0)">Family 💕</button>
+  <button onclick="openAccordion(1)">Friends 🤍</button>
+  <button onclick="openAccordion(2)">Foods 🍰</button>
+</div>
+
+<!-- 🌸 Accordion Sections -->
+<div class="accordion">
+
+  <!-- FAMILY -->
+  <div class="accordion-header">Family 💕</div>
+  <div class="accordion-body">
+    <div class="gallery-grid">
+      <img src="wani-family1.jpg">
+      <img src="wani-family2.jpg">
+      <img src="wani-family3.jpg">
+      <img src="wani-family4.jpg">
+      <img src="wani-family5.jpg">
+    </div>
+  </div>
+
+  <!-- FRIENDS -->
+  <div class="accordion-header">Friends 🤍</div>
+  <div class="accordion-body">
+    <div class="gallery-grid">
+      <img src="wani-friends1.jpg">
+      <img src="wani-friends2.jpg">
+      <img src="wani-friends3.jpg">
+      <img src="wani-friends4.jpg">
+      <img src="wani-friends5.jpg">
+    </div>
+  </div>
+
+  <!-- FOODS -->
+  <div class="accordion-header">Foods 🍰</div>
+  <div class="accordion-body">
+    <div class="gallery-grid">
+      <img src="wani-food1.jpg">
+      <img src="wani-food2.jpg">
+      <img src="wani-food3.jpg">
+      <img src="wani-food4.jpg">
+      <img src="wani-food5.jpg">
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer>&copy; 2025 | Educational Purpose Only | Syazwani Alieya Bt Zakaria</footer>
+
+<!-- 🌟 JS -->
+<script>
+// Accordion click
+const headers = document.querySelectorAll(".accordion-header");
+headers.forEach((header, index) => {
+  header.addEventListener("click", () => {
+    toggleAccordion(index);
+  });
+});
+
+function toggleAccordion(i) {
+  const bodies = document.querySelectorAll(".accordion-body");
+
+  bodies.forEach((body, index) => {
+    body.style.display = index === i ? 
+      (body.style.display === "block" ? "none" : "block") 
+      : "none";
+  });
+}
+
+// Bubble button auto-open
+function openAccordion(i) {
+  toggleAccordion(i);
+  window.scrollTo({ top: 350, behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>

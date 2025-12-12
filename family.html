@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Family - Wani</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body {
+  background: url('montigo-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Sparkle */
+.sparkles {position: fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;}
+.sparkle {position:absolute;width:4px;height:4px;background:white;border-radius:50%;box-shadow:0 0 10px rgba(255,255,255,0.8);animation:move 10s linear infinite,blink 2s ease-in-out infinite alternate;}
+@keyframes move {from{transform:translateY(0);}to{transform:translateY(100vh);} }
+@keyframes blink {from{opacity:0.3;}to{opacity:1;}}
+
+header {
+  background-color: rgba(169,169,169,0.85);
+  color: black;
+  padding: 25px;
+  text-align: center;
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
+header h1 {
+  font-size: 1.6em;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+nav ul {list-style:none;margin:0;padding:0;background:#191970;display:flex;justify-content:center;flex-wrap:wrap;}
+nav ul li a {color:white;text-decoration:none;padding:14px 20px;display:block;}
+nav ul li a:hover, nav ul li a.active {background:#3b3b98;border-radius:5px;}
+
+main {
+  flex:1;
+  text-align:center;
+  padding:40px 20px;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.title-box {
+  display:inline-block;
+  background:rgba(255,255,255,0.9);
+  padding:8px 25px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  font-size:1.2em;
+  font-family:'Great Vibes',cursive;
+  color:#3b3b98;
+  margin-bottom:30px;
+}
+
+/* AUTOSLIDE SQUARE FRAME */
+.slider-container {
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 6px solid #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background: #fff;
+  display: block;
+  z-index: 5;
+}
+.slider-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* pastikan gambar penuh kotak, tidak terpotong separuh */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  border-radius: 15px;
+}
+.slider-container img.active {opacity: 1;}
+
+/* DESCRIPTION CARDS */
+.family-desc {
+  margin-top:40px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+.family-card {
+  background:rgba(230,200,255,0.9);
+  width:320px;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  background:rgba(169,169,169,0.85);
+  padding:20px;
+  text-align:center;
+  backdrop-filter:blur(3px);
+}
+</style>
+</head>
+<body>
+<div class="sparkles" id="sparkles"></div>
+
+<header><h1>MY LOVELY FAMILY🌷</h1></header>
+<nav>
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="aboutme.html">About Me</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="family.html" class="active">Family</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="friends.html">Friends</a></li>
+    <li><a href="favourites.html">Favourites</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+</nav>
+
+<main>
+  <div class="title-box">My Wonderful Family 💜</div>
+
+  <!-- AUTOSLIDE SQUARE -->
+  <div class="slider-container">
+    <img src="umi.jpg" class="active">
+    <img src="abah.jpg">
+    <img src="kakaklieya.jpg">
+    <img src="balqis.jpg">
+    <img src="huda.jpg">
+    <img src="abecik.jpg">
+    <img src="asyraf.jpg">
+    <img src="adib.jpg">
+    <img src="baby.jpg">
+  </div>
+
+  <!-- DESCRIPTION CARDS -->
+  <div class="family-desc">
+    <div class="family-card">💖 Both of my parents, Umi and Abah, are from Kelantan and have always been the heart of our home.</div>
+    <div class="family-card">👨‍👩‍👧‍👦 We are a family of nine, filled with laughter, love, and endless stories.</div>
+    <div class="family-card">👧 The girls — kind, graceful, and amazing cooks who make every meal special.</div>
+    <div class="family-card">👦 The boys — cheerful, funny, and always ready to help whenever needed.</div>
+    <div class="family-card">🌸 Together, we create moments that make our home truly wonderful.</div>
+  </div>
+</main>
+
+<footer>&copy; 2025 | Educational Purpose Only | Syazwani Alieya Bt Zakaria</footer>
+
+<script>
+/* Sparkles */
+const sparkleContainer = document.getElementById('sparkles');
+for (let i = 0; i < 60; i++) {
+  const s = document.createElement('div');
+  s.classList.add('sparkle');
+  s.style.left = Math.random()*100 + '%';
+  s.style.top = Math.random()*100 + '%';
+  s.style.animationDelay = (Math.random()*5)+'s';
+  sparkleContainer.appendChild(s);
+}
+
+/* AUTOSLIDE */
+let index = 0;
+const slides = document.querySelectorAll('.slider-container img');
+setInterval(() => {
+  slides[index].classList.remove('active');
+  index = (index + 1) % slides.length;
+  slides[index].classList.add('active');
+}, 3000);
+</script>
+</body>
+</html>
